@@ -9,27 +9,7 @@ concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
-  import-source:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    outputs:
-      sha: ${{ steps.source.outputs.sha }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: source
-        shell: bash
-        run: |
-          if [[ -f muselab-source.zip ]]; then
-            unzip -oq muselab-source.zip -x '.github/*'
-            git rm muselab-source.zip
-            git add .
-            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish Muselab source code'
-            git push origin HEAD:main
-          fi
-          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
   deploy:
-    needs: import-source
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -41,7 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.import-source.outputs.sha }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -53,7 +32,7 @@ jobs:
       - run: npm run build -- --mode pages --base "$PAGES_BASE/"
         env:
           PAGES_BASE: ${{ steps.pages.outputs.base_path }}
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
       - uses: actions/deploy-pages@v4
