@@ -2,21 +2,21 @@
 
 资讯、播客和灵感图散在不同地方，存下来以后常常找不到。Muselab 是我用 Codex 做的个人工作台。我想每天打开同一个页面，看几条值得读的资讯，挑一期播客，再把有用的文字和参考图留到下次能找到的地方。
 
-## 30 秒使用演示
+## 45 秒高清使用演示
 
-[![播放 Muselab 使用演示](docs/walkthrough-cover.jpg)](https://cdn.jsdelivr.net/gh/LinglingZhangAI/muselab-workbench@main/docs/muselab-walkthrough.mp4)
+[![播放 Muselab 使用演示](docs/walkthrough-local-hd.png)](https://cdn.jsdelivr.net/gh/LinglingZhangAI/muselab-workbench@main/docs/muselab-local-1080p.mp4)
 
-从工作台打开每日简报，展开并播放播客，再切回小窗继续浏览插画素材。演示配有中文操作提示，可以静音观看。
+录自本地工作台。打开新闻详情，播放播客并查看字幕，切回小窗后继续浏览卡片素材和 UI Prompt。视频为 1080p，配有中文操作提示。
 
-[播放视频](https://cdn.jsdelivr.net/gh/LinglingZhangAI/muselab-workbench@main/docs/muselab-walkthrough.mp4) · [下载 MP4](https://github.com/LinglingZhangAI/muselab-workbench/raw/refs/heads/main/docs/muselab-walkthrough.mp4) · [在线体验](https://linglingzhangai.github.io/muselab-workbench/)
+[播放视频](https://cdn.jsdelivr.net/gh/LinglingZhangAI/muselab-workbench@main/docs/muselab-local-1080p.mp4) · [下载 MP4](https://github.com/LinglingZhangAI/muselab-workbench/raw/refs/heads/main/docs/muselab-local-1080p.mp4) · [在线体验](https://linglingzhangai.github.io/muselab-workbench/)
 
 ## 页面截图
 
-| 工作台首页 | 每日简报 |
+| 工作台首页 | 新闻详情 |
 | --- | --- |
-| ![工作台首页](docs/workbench.jpg) | ![每日简报](docs/daily-brief.jpg) |
-| **播客播放器** | **插画素材** |
-| ![播客播放器](docs/podcast.jpg) | ![插画素材](docs/inspiration.jpg) |
+| ![工作台首页](docs/workbench-local-hd.png) | ![新闻详情](docs/news-local-hd.png) |
+| **播客播放器** | **灵感图库** |
+| ![播客播放器](docs/podcast-local-hd.png) | ![灵感图库](docs/inspiration-local-hd.png) |
 
 ## 一天里怎么用
 
