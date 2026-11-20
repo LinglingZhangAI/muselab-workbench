@@ -1,0 +1,382 @@
+[
+  {
+    "slug": "announcement",
+    "name": "Announcements",
+    "url": "https://21st.dev/community/components/s/announcement"
+  },
+  {
+    "slug": "background",
+    "name": "Backgrounds",
+    "url": "https://21st.dev/community/components/s/background"
+  },
+  {
+    "slug": "border",
+    "name": "Borders",
+    "url": "https://21st.dev/community/components/s/border"
+  },
+  {
+    "slug": "cta",
+    "name": "Calls to Action",
+    "url": "https://21st.dev/community/components/s/cta"
+  },
+  {
+    "slug": "clients",
+    "name": "Clients",
+    "url": "https://21st.dev/community/components/s/clients"
+  },
+  {
+    "slug": "comparison",
+    "name": "Comparisons",
+    "url": "https://21st.dev/community/components/s/comparison"
+  },
+  {
+    "slug": "dock",
+    "name": "Docks",
+    "url": "https://21st.dev/community/components/s/dock"
+  },
+  {
+    "slug": "faq",
+    "name": "FAQs",
+    "url": "https://21st.dev/community/components/s/faq"
+  },
+  {
+    "slug": "features",
+    "name": "Features",
+    "url": "https://21st.dev/community/components/s/features"
+  },
+  {
+    "slug": "footer",
+    "name": "Footers",
+    "url": "https://21st.dev/community/components/s/footer"
+  },
+  {
+    "slug": "gallery",
+    "name": "Galleries",
+    "url": "https://21st.dev/community/components/s/gallery"
+  },
+  {
+    "slug": "hero",
+    "name": "Heroes",
+    "url": "https://21st.dev/community/components/s/hero"
+  },
+  {
+    "slug": "hook",
+    "name": "Hooks",
+    "url": "https://21st.dev/community/components/s/hook"
+  },
+  {
+    "slug": "image",
+    "name": "Images",
+    "url": "https://21st.dev/community/components/s/image"
+  },
+  {
+    "slug": "map",
+    "name": "Maps",
+    "url": "https://21st.dev/community/components/s/map"
+  },
+  {
+    "slug": "marquee",
+    "name": "Marquees",
+    "url": "https://21st.dev/community/components/s/marquee"
+  },
+  {
+    "slug": "navigation-menu",
+    "name": "Navigation Menus",
+    "url": "https://21st.dev/community/components/s/navigation-menu"
+  },
+  {
+    "slug": "pricing-section",
+    "name": "Pricing Sections",
+    "url": "https://21st.dev/community/components/s/pricing-section"
+  },
+  {
+    "slug": "scroll-area",
+    "name": "Scroll Areas",
+    "url": "https://21st.dev/community/components/s/scroll-area"
+  },
+  {
+    "slug": "stat",
+    "name": "Stats & KPIs",
+    "url": "https://21st.dev/community/components/s/stat"
+  },
+  {
+    "slug": "steps",
+    "name": "Steppers",
+    "url": "https://21st.dev/community/components/s/steps"
+  },
+  {
+    "slug": "team",
+    "name": "Team Sections",
+    "url": "https://21st.dev/community/components/s/team"
+  },
+  {
+    "slug": "testimonials",
+    "name": "Testimonials",
+    "url": "https://21st.dev/community/components/s/testimonials"
+  },
+  {
+    "slug": "text",
+    "name": "Texts",
+    "url": "https://21st.dev/community/components/s/text"
+  },
+  {
+    "slug": "timeline",
+    "name": "Timelines",
+    "url": "https://21st.dev/community/components/s/timeline"
+  },
+  {
+    "slug": "video",
+    "name": "Videos",
+    "url": "https://21st.dev/community/components/s/video"
+  },
+  {
+    "slug": "accordion",
+    "name": "Accordions",
+    "url": "https://21st.dev/community/components/s/accordion"
+  },
+  {
+    "slug": "ai-chat",
+    "name": "AI Chats",
+    "url": "https://21st.dev/community/components/s/ai-chat"
+  },
+  {
+    "slug": "alert",
+    "name": "Alerts",
+    "url": "https://21st.dev/community/components/s/alert"
+  },
+  {
+    "slug": "avatar",
+    "name": "Avatars",
+    "url": "https://21st.dev/community/components/s/avatar"
+  },
+  {
+    "slug": "badge",
+    "name": "Badges",
+    "url": "https://21st.dev/community/components/s/badge"
+  },
+  {
+    "slug": "button",
+    "name": "Buttons",
+    "url": "https://21st.dev/community/components/s/button"
+  },
+  {
+    "slug": "calendar",
+    "name": "Calendars",
+    "url": "https://21st.dev/community/components/s/calendar"
+  },
+  {
+    "slug": "card",
+    "name": "Cards",
+    "url": "https://21st.dev/community/components/s/card"
+  },
+  {
+    "slug": "carousel",
+    "name": "Carousels",
+    "url": "https://21st.dev/community/components/s/carousel"
+  },
+  {
+    "slug": "data-visualization",
+    "name": "Charts & Data Viz",
+    "url": "https://21st.dev/community/components/s/data-visualization"
+  },
+  {
+    "slug": "checkbox",
+    "name": "Checkboxes",
+    "url": "https://21st.dev/community/components/s/checkbox"
+  },
+  {
+    "slug": "cursor",
+    "name": "Cursors",
+    "url": "https://21st.dev/community/components/s/cursor"
+  },
+  {
+    "slug": "dashboard",
+    "name": "Dashboards",
+    "url": "https://21st.dev/community/components/s/dashboard"
+  },
+  {
+    "slug": "date-picker",
+    "name": "Date Pickers",
+    "url": "https://21st.dev/community/components/s/date-picker"
+  },
+  {
+    "slug": "modal",
+    "name": "Dialogs / Modals",
+    "url": "https://21st.dev/community/components/s/modal"
+  },
+  {
+    "slug": "dropdown",
+    "name": "Dropdowns",
+    "url": "https://21st.dev/community/components/s/dropdown"
+  },
+  {
+    "slug": "empty-state",
+    "name": "Empty States",
+    "url": "https://21st.dev/community/components/s/empty-state"
+  },
+  {
+    "slug": "file-tree",
+    "name": "File Trees",
+    "url": "https://21st.dev/community/components/s/file-tree"
+  },
+  {
+    "slug": "upload-download",
+    "name": "File Uploads",
+    "url": "https://21st.dev/community/components/s/upload-download"
+  },
+  {
+    "slug": "form",
+    "name": "Forms",
+    "url": "https://21st.dev/community/components/s/form"
+  },
+  {
+    "slug": "globe",
+    "name": "Globes",
+    "url": "https://21st.dev/community/components/s/globe"
+  },
+  {
+    "slug": "grid",
+    "name": "Grids & Bento",
+    "url": "https://21st.dev/community/components/s/grid"
+  },
+  {
+    "slug": "icon",
+    "name": "Icons",
+    "url": "https://21st.dev/community/components/s/icon"
+  },
+  {
+    "slug": "input",
+    "name": "Inputs",
+    "url": "https://21st.dev/community/components/s/input"
+  },
+  {
+    "slug": "link",
+    "name": "Links",
+    "url": "https://21st.dev/community/components/s/link"
+  },
+  {
+    "slug": "list",
+    "name": "Lists",
+    "url": "https://21st.dev/community/components/s/list"
+  },
+  {
+    "slug": "menu",
+    "name": "Menus",
+    "url": "https://21st.dev/community/components/s/menu"
+  },
+  {
+    "slug": "notification",
+    "name": "Notifications",
+    "url": "https://21st.dev/community/components/s/notification"
+  },
+  {
+    "slug": "number",
+    "name": "Numbers",
+    "url": "https://21st.dev/community/components/s/number"
+  },
+  {
+    "slug": "onboarding",
+    "name": "Onboarding",
+    "url": "https://21st.dev/community/components/s/onboarding"
+  },
+  {
+    "slug": "pagination",
+    "name": "Paginations",
+    "url": "https://21st.dev/community/components/s/pagination"
+  },
+  {
+    "slug": "popover",
+    "name": "Popovers",
+    "url": "https://21st.dev/community/components/s/popover"
+  },
+  {
+    "slug": "profile",
+    "name": "Profiles",
+    "url": "https://21st.dev/community/components/s/profile"
+  },
+  {
+    "slug": "progress",
+    "name": "Progress",
+    "url": "https://21st.dev/community/components/s/progress"
+  },
+  {
+    "slug": "radio-group",
+    "name": "Radio Groups",
+    "url": "https://21st.dev/community/components/s/radio-group"
+  },
+  {
+    "slug": "search",
+    "name": "Search Bars",
+    "url": "https://21st.dev/community/components/s/search"
+  },
+  {
+    "slug": "select",
+    "name": "Selects",
+    "url": "https://21st.dev/community/components/s/select"
+  },
+  {
+    "slug": "sidebar",
+    "name": "Sidebars",
+    "url": "https://21st.dev/community/components/s/sidebar"
+  },
+  {
+    "slug": "sign-in",
+    "name": "Sign Ins",
+    "url": "https://21st.dev/community/components/s/sign-in"
+  },
+  {
+    "slug": "sign-up",
+    "name": "Sign ups",
+    "url": "https://21st.dev/community/components/s/sign-up"
+  },
+  {
+    "slug": "slider",
+    "name": "Sliders",
+    "url": "https://21st.dev/community/components/s/slider"
+  },
+  {
+    "slug": "spinner",
+    "name": "Spinner Loaders",
+    "url": "https://21st.dev/community/components/s/spinner"
+  },
+  {
+    "slug": "table",
+    "name": "Tables",
+    "url": "https://21st.dev/community/components/s/table"
+  },
+  {
+    "slug": "tabs",
+    "name": "Tabs",
+    "url": "https://21st.dev/community/components/s/tabs"
+  },
+  {
+    "slug": "chip",
+    "name": "Tags",
+    "url": "https://21st.dev/community/components/s/chip"
+  },
+  {
+    "slug": "textarea",
+    "name": "Text Areas",
+    "url": "https://21st.dev/community/components/s/textarea"
+  },
+  {
+    "slug": "toast",
+    "name": "Toasts",
+    "url": "https://21st.dev/community/components/s/toast"
+  },
+  {
+    "slug": "toggle",
+    "name": "Toggles",
+    "url": "https://21st.dev/community/components/s/toggle"
+  },
+  {
+    "slug": "tooltip",
+    "name": "Tooltips",
+    "url": "https://21st.dev/community/components/s/tooltip"
+  },
+  {
+    "slug": "collapsible",
+    "name": "Collapsible",
+    "url": "https://21st.dev/community/components/s/collapsible"
+  }
+]
