@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>迁移本机资料 · Muselab</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fbfaf7;color:#30312f;font:15px/1.8 system-ui,sans-serif;padding:48px 24px}main{max-width:640px;margin:auto;background:white;padding:32px;border:1px solid #e9e6de;border-radius:18px}small{color:#888;letter-spacing:.15em}h1{font:30px/1.4 'Songti SC',serif}p{color:#72716b}button,input{font:inherit}button{padding:10px 18px;border:1px solid #30312f;border-radius:8px;background:#30312f;color:white;cursor:pointer}button:disabled{opacity:.45;cursor:wait}.section{border-top:1px solid #eee9df;margin-top:24px;padding-top:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 system-ui;color:#666}a{color:inherit}label{display:block;margin:12px 0}input{max-width:100%}:focus-visible{outline:2px solid #b29457;outline-offset:4px}
+</style>
+<main>
+ <small>MUSELAB</small><h1>把本机资料带到云端</h1>
+ <p>先在原来使用的浏览器中导出，再到云端工作台导入。备份包含笔记、文件夹、个人素材修改、时间记录和白板，请自己妥善保存。</p>
+ <p id="mode" role="status">正在检查当前工作台…</p>
+ <div class="section"><h2>1. 导出原浏览器资料</h2><button id="export">下载资料备份</button></div>
+ <div class="section"><h2>2. 导入到云端</h2><p>请在新网站登录后打开本页。已有云端内容会保留；发生差异的项目会跳过，避免覆盖。</p><label>选择刚下载的备份 <input id="file" type="file" accept="application/json,.json"></label><button id="import" disabled>导入备份</button></div>
+ <pre id="result" role="status" aria-live="polite"></pre><p><a href="/">返回工作台</a></p>
+</main>
+<script type="module">
+const boardKey='muselab-whiteboard:v1';
+const allowed=key=>['muselab-notes:v1','muselab-folders:v1','muselab-note-folders:v1','eagle-prompt-library:v1',boardKey].includes(key)||/^muselab-timeline:v2:\d{4}-\d{2}-\d{2}$/.test(key);
+const output=document.querySelector('#result');let cloud=false;
+try{const response=await fetch('/api/user-state');if(response.ok&&response.headers.get('content-type')?.includes('application/json'))cloud=(await response.json()).cloud===true;}catch{}
+document.querySelector('#mode').textContent=cloud?'当前是云端工作台，可以导入资料。':'当前是本机工作台，请先导出，再到新网站导入。';
+document.querySelector('#import').disabled=!cloud;
+async function board(){
+ if(cloud){const response=await fetch('/api/user-state?key='+encodeURIComponent(boardKey));if(!response.ok)throw new Error('白板读取失败');const {state}=await response.json();return state[boardKey]?.value;}
+ return new Promise((resolve,reject)=>{const request=indexedDB.open(boardKey,1);request.onupgradeneeded=()=>request.result.createObjectStore('boards');request.onerror=()=>reject(request.error);request.onsuccess=()=>{const db=request.result;const tx=db.transaction('boards','readonly');const item=tx.objectStore('boards').get('main');tx.oncomplete=()=>{db.close();resolve(item.result?JSON.stringify(item.result):undefined);};tx.onerror=()=>{db.close();reject(tx.error);};};});
+}
+document.querySelector('#export').onclick=async()=>{
+ try{const state={};for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(allowed(key)&&key!==boardKey)state[key]=localStorage.getItem(key);}const scene=await board();if(scene)state[boardKey]=scene;
+ const value={format:'muselab-transfer-v1',exportedAt:new Date().toISOString(),state};const url=URL.createObjectURL(new Blob([JSON.stringify(value)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='Muselab-资料迁移-'+new Date().toISOString().slice(0,10)+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),2000);output.textContent='已导出 '+Object.keys(state).length+' 项。图片文件由迁移脚本单独上传，原浏览器资料保持原样。';
+ }catch(error){output.textContent=error.message;}
+};
+document.querySelector('#import').onclick=async()=>{
+ const button=document.querySelector('#import');button.disabled=true;
+ try{if(!cloud)throw new Error('请到云端工作台导入');const file=document.querySelector('#file').files[0];if(!file)throw new Error('请先选择备份文件');if(file.size>64*1024*1024)throw new Error('备份超过 64 MB，请分项迁移');
+ const input=JSON.parse(await file.text());if(input.format!=='muselab-transfer-v1'||!input.state||typeof input.state!=='object'||Array.isArray(input.state))throw new Error('备份格式无效');
+ // Validate the whole file before the first write.
+ for(const [key,value] of Object.entries(input.state)){if(!allowed(key)||typeof value!=='string')throw new Error('备份中包含无效项目');const parsed=JSON.parse(value);if(key===boardKey?(!parsed||typeof parsed!=='object'||Array.isArray(parsed)):!Array.isArray(parsed))throw new Error('备份内容格式无效');if(new Blob([value]).size>(key===boardKey?24:8)*1024*1024)throw new Error('单项备份过大：'+key);}
+ let saved=0,skipped=0;const results=[];
+ for(const [key,value] of Object.entries(input.state)){
+  const endpoint='/api/user-state?key='+encodeURIComponent(key);const response=await fetch(endpoint);if(!response.ok)throw new Error('无法确认云端内容，已停止导入');const {state}=await response.json();
+  if(state[key]){skipped++;results.push((state[key].value===value?'已存在：':'保留云端差异，跳过：')+key);continue;}
+  const result=await fetch(endpoint,{method:'PUT',headers:{'Content-Type':'application/json','If-Match':''},body:value});const data=await result.json();if(!result.ok)throw new Error(data.error||'导入失败');saved++;results.push('已导入：'+key);output.textContent=results.join('\n');
+ }
+ output.textContent='导入完成：'+saved+' 项，保留已有内容 '+skipped+' 项。刷新工作台后查看。\n'+results.join('\n');
+ }catch(error){output.textContent+='\n'+error.message+'。原备份不变，已成功导入的项目保留，可重试。';}finally{button.disabled=!cloud;}
+};
+</script>
+</html>

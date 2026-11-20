@@ -1,0 +1,182 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "string"
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "string"
+          },
+          "task": {
+            "type": "string"
+          },
+          "approach": {
+            "type": "string"
+          },
+          "strength": {
+            "type": "string"
+          },
+          "tradeoff": {
+            "type": "string"
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "product",
+          "task",
+          "approach",
+          "strength",
+          "tradeoff",
+          "evidenceIds"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "string"
+          },
+          "interpretation": {
+            "type": "string"
+          },
+          "recommendation": {
+            "type": "string"
+          },
+          "uncertainty": {
+            "type": "string"
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "title",
+          "observation",
+          "interpretation",
+          "recommendation",
+          "uncertainty",
+          "evidenceIds"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "journey": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "risk": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "step",
+          "action",
+          "risk"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "priority": {
+            "type": "string",
+            "enum": [
+              "P0",
+              "P1",
+              "P2"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "proposal": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "effort": {
+            "type": "string"
+          },
+          "validation": {
+            "type": "string"
+          },
+          "successCriteria": {
+            "type": "string"
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "priority",
+          "title",
+          "proposal",
+          "rationale",
+          "effort",
+          "validation",
+          "successCriteria",
+          "evidenceIds"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "title",
+    "question",
+    "audience",
+    "summary",
+    "limitations",
+    "comparisons",
+    "findings",
+    "journey",
+    "opportunities"
+  ],
+  "additionalProperties": false
+}

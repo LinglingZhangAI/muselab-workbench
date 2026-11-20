@@ -1,0 +1,45 @@
+{
+  "name": "eagle-prompt-library",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "news:update": "node --experimental-strip-types scripts/update-daily-news.mjs",
+    "podcasts:update": "node --experimental-strip-types scripts/update-daily-podcasts.mjs",
+    "dev": "vite --host 127.0.0.1 --port 4187 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "build:cloud": "npm run build && node scripts/build-cloud.mjs",
+    "start": "node build-server/cloud.mjs",
+    "sync:cloud": "node --env-file-if-exists=.env.cloud.local scripts/sync-cloud.mjs",
+    "cloud:check": "node --experimental-strip-types --env-file-if-exists=.env.cloud.local scripts/migrate-supabase.mjs --check",
+    "cloud:migrate": "node --experimental-strip-types --env-file-if-exists=.env.cloud.local scripts/migrate-supabase.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4187 --strictPort",
+    "events:update": "node --experimental-strip-types scripts/update-major-events.mjs"
+  },
+  "dependencies": {
+    "@excalidraw/excalidraw": "^0.18.1",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "cheerio": "^1.2.0",
+    "clsx": "^2.1.1",
+    "connect": "^3.7.0",
+    "lucide-react": "^0.487.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanitize-html": "^2.18.1",
+    "sirv": "^3.0.2",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/connect": "^3.4.38",
+    "@types/node": "^22.14.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/sanitize-html": "^2.16.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.8.2",
+    "vite": "^6.3.5"
+  }
+}

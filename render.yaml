@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: muselab
+    runtime: node
+    plan: free
+    autoDeployTrigger: off
+    buildCommand: npm ci --include=dev && npm run build:cloud
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0
+      - key: NODE_ENV
+        value: production
+      - key: MUSELAB_DATA_DIR
+        value: /tmp/muselab-cache
+      - key: MUSELAB_STORAGE
+        value: supabase
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_STORAGE_BUCKET
+        value: muselab-media
+      - key: MUSELAB_PASSWORD
+        sync: false
+      - key: MUSELAB_SESSION_SECRET
+        generateValue: true
+      - key: MUSELAB_SYNC_TOKEN
+        generateValue: true
+      - key: OPENAI_BASE_URL
+        value: https://api.openai.com/v1
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
