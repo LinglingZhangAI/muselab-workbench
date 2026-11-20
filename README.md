@@ -2,6 +2,22 @@
 
 资讯、播客和灵感图散在不同地方，存下来以后常常找不到。Muselab 是我用 Codex 做的个人工作台。我想每天打开同一个页面，看几条值得读的资讯，挑一期播客，再把有用的文字和参考图留到下次能找到的地方。
 
+## 30 秒使用演示
+
+[![播放 Muselab 使用演示](docs/walkthrough-cover.jpg)](https://cdn.jsdelivr.net/gh/LinglingZhangAI/muselab-workbench@main/docs/muselab-walkthrough.mp4)
+
+从工作台打开每日简报，展开并播放播客，再切回小窗继续浏览插画素材。演示配有中文操作提示，可以静音观看。
+
+[播放视频](https://cdn.jsdelivr.net/gh/LinglingZhangAI/muselab-workbench@main/docs/muselab-walkthrough.mp4) · [下载 MP4](https://github.com/LinglingZhangAI/muselab-workbench/raw/refs/heads/main/docs/muselab-walkthrough.mp4) · [在线体验](https://linglingzhangai.github.io/muselab-workbench/)
+
+## 页面截图
+
+| 工作台首页 | 每日简报 |
+| --- | --- |
+| ![工作台首页](docs/workbench.jpg) | ![每日简报](docs/daily-brief.jpg) |
+| **播客播放器** | **插画素材** |
+| ![播客播放器](docs/podcast.jpg) | ![插画素材](docs/inspiration.jpg) |
+
 ## 一天里怎么用
 
 - **先看简报。** 首页集中展示 AI 资讯、AI Builders’ Insight 和设计更新，保留采集日期和原文入口。本地可以汇总当天的 Codex 工作记录，从简报回到相关任务。
